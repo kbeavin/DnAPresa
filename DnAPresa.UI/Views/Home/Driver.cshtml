@@ -1,0 +1,86 @@
+﻿@model TabModels
+@using DnAPresa.UI.Models
+
+<section>
+    <div class="row content-box">
+
+        <div class="col-md-12">
+
+            <h2>Driver</h2>
+
+            <div class="row">
+
+                <div class="col-sm-4 mt7">
+
+                    <span>Total Active Drivers:</span>
+
+                </div>
+
+                <div class="col-sm-8">
+
+                    <input type="text" class="form-control" value="@Model.TotalActiveDrivers" disabled>
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-sm-4 mt7">
+
+                    <span>Driver Pool Percentage:</span>
+
+                </div>
+                <div class="col-sm-8">
+
+                    <input type="text" class="form-control">
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-sm-4 mt7">
+
+                    <span>Alchohol Percentage:</span>
+
+                </div>
+                <div class="col-sm-8">
+
+                    <input type="text" class="form-control">
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-sm-4">
+
+                    <span>Print Active Driver List:</span>
+
+                </div>
+                <div class="col-sm-8">
+
+                    <input type="checkbox">
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-sm-12">
+
+                    <button class="btn btn-default">Print Driver Report</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

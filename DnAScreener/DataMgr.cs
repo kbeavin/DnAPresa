@@ -108,30 +108,35 @@ namespace DnAScreener
             return myData;
         }
 
-        internal DataTable getDrivers()
+        public DataTable getDrivers()
         {
             return getUnspecified("	WHERE Tier3 = 'Drivers'");
         }
 
-        internal DataTable getCEXPOffice()
+        public DataTable getCEXPOffice()
         {
 
             return getUnspecified("	WHERE Tier3 = 'Office'");
         }
 
-        internal DataTable getCEXPWarehouse()
+        public DataTable getCEXPWarehouse()
         {
             return getUnspecified("	WHERE Tier3 = 'Warehouse'");
         }
 
-        internal DataTable getCLL()
+        public DataTable getCLL()
         {
             return getUnspecified("	WHERE Tier3 = 'Logistics'");
         }
 
-        internal DataTable getDukel()
+        public DataTable getDukel()
         {
             return getUnspecified("	WHERE Tier3 = 'Dukes'");
+        }
+
+        public DataTable getCantons()
+        {
+            return getUnspecified(" WHERE Tier4 = 'Cantons'");
         }
 
         /// <summary>

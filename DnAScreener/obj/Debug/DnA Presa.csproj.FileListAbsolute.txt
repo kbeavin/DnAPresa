@@ -30,7 +30,6 @@ C:\Users\kbeavin\source\repos\DnAPresa\DnAScreener\bin\Debug\FlashControlV71.dll
 C:\Users\kbeavin\source\repos\DnAPresa\DnAScreener\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\kbeavin\source\repos\DnAPresa\DnAScreener\bin\Debug\stdole.dll
 C:\Users\kbeavin\source\repos\DnAPresa\DnAScreener\bin\Debug\ShockwaveFlashObjects.dll
-C:\Users\kbeavin\source\repos\DnAPresa\DnAScreener\obj\Debug\DnA Presa.csprojAssemblyReference.cache
 C:\Users\kbeavin\source\repos\DnAPresa\DnAScreener\obj\Debug\DnAScreener.CEXPOffice.resources
 C:\Users\kbeavin\source\repos\DnAPresa\DnAScreener\obj\Debug\DnAScreener.CEXPWarehouseTab.resources
 C:\Users\kbeavin\source\repos\DnAPresa\DnAScreener\obj\Debug\DnAScreener.CLLTab.resources
@@ -50,3 +49,4 @@ C:\Users\kbeavin\source\repos\DnAPresa\DnAScreener\obj\Debug\DnAScreener.applica
 C:\Users\kbeavin\source\repos\DnAPresa\DnAScreener\obj\Debug\DnA Presa.csproj.CopyComplete
 C:\Users\kbeavin\source\repos\DnAPresa\DnAScreener\obj\Debug\DnAScreener.exe
 C:\Users\kbeavin\source\repos\DnAPresa\DnAScreener\obj\Debug\DnAScreener.pdb
+C:\Users\kbeavin\source\repos\DnAPresa\DnAScreener\obj\Debug\DnA Presa.csprojAssemblyReference.cache
