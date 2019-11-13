@@ -42,7 +42,7 @@ namespace DnAPresa.UI.Controllers
 
         #region Driver
 
-        public ActionResult Driver(TabModels mData)
+        public ActionResult Driver(TabModels model)
         {
             TabModels viewModel = new TabModels();
 
@@ -60,6 +60,22 @@ namespace DnAPresa.UI.Controllers
             }
 
             return View(viewModel);
+        }
+
+        public ActionResult Print_DriverReport(TabModels model)
+        {
+            JsonResult json = new JsonResult { Data = null };
+
+            try
+            {
+                
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return json;
         }
 
         #endregion
@@ -86,6 +102,22 @@ namespace DnAPresa.UI.Controllers
             return View(viewModel);
         }
 
+        public ActionResult Print_OfficeReport(TabModels model)
+        {
+            JsonResult json = new JsonResult { Data = null };
+
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return json;
+        }
+
         #endregion
 
         #region ExpressWarehouse
@@ -108,6 +140,22 @@ namespace DnAPresa.UI.Controllers
             }
 
             return View(viewModel);
+        }
+
+        public ActionResult Print_WarehouseReport(TabModels model)
+        {
+            JsonResult json = new JsonResult { Data = null };
+
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return json;
         }
 
         #endregion
@@ -134,6 +182,22 @@ namespace DnAPresa.UI.Controllers
             return View(viewModel);
         }
 
+        public ActionResult Print_LogisticsReport(TabModels model)
+        {
+            JsonResult json = new JsonResult { Data = null };
+
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return json;
+        }
+
         #endregion
 
         #region Duke
@@ -158,6 +222,22 @@ namespace DnAPresa.UI.Controllers
             return View(viewModel);
         }
 
+        public ActionResult Print_DukeReport(TabModels model)
+        {
+            JsonResult json = new JsonResult { Data = null };
+
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return json;
+        }
+
         #endregion
 
         #region Canton
@@ -180,6 +260,22 @@ namespace DnAPresa.UI.Controllers
             }
 
             return View(viewModel);
+        }
+
+        public ActionResult Print_CantonReport(TabModels model)
+        {
+            JsonResult json = new JsonResult { Data = null };
+
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return json;
         }
 
         #endregion
