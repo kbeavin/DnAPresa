@@ -118,14 +118,14 @@ namespace DnAScreener
             Dukes = 6
         };
 
-        private string ID;
-        private string FName;
-        private string LName;
-        private string MI;
-        private string DB;
-        internal bool Drug, Alcohol, Substitute;
+        public string ID;
+        public string FName;
+        public string LName;
+        public string MI;
+        public string DB;
+        public bool Drug, Alcohol, Substitute;
         private string SSN;
-        private string TMWDriverID;
+        public string TMWDriverID;
         EmpClass EmployeeClass;
 
         /// <summary>

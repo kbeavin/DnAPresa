@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    color: #666555;
 }
 
 h2 {
@@ -33,10 +34,9 @@ textarea {
 
 .content-box {
     margin: 50px auto;
-    width: 50%;
-    border: 3px solid gray;
-    border-radius: 10px;
-    padding: 15px 0;
+    padding: 15px;
+    border: 2px solid gray;
+    border-radius: 3px;
 }
 
 .form-control {
@@ -46,4 +46,38 @@ textarea {
 
 .mt7 {
     margin-top: 7px;
+}
+
+.mt-3 {
+    margin-top: 15px
+}
+
+#print-btn {
+    width: 100%;
+    background-color: gray;
+    color: white;
+    font-size: 12px;
+}
+
+table, thead, tbody, tr, th, td {
+    padding: 5px;
+
+}
+
+th, td {
+    padding: 0 30px;
+    border-bottom: 1px solid gray;
+}
+
+caption {
+    font-size: 20px;
+    border-bottom: 1px solid gray;
+}
+
+#print-div {
+    padding: 15px 30px;
+}
+
+#print-head {
+    margin: 0 -15px;
 }

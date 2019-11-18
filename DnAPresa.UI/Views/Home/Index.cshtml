@@ -1,55 +1,54 @@
 ﻿@model LoginModels
 @using DnAPresa.UI.Models
 
-@{ 
+@{
     var mData = new LoginModels();
 }
 
-<section>
-    <div class="row content-box">
+<div class="row">
 
-        <div class="col-md-12">
+    <div class="col-sm-1"></div>
 
-            <h2>Login</h2>
+    <div class="col-sm-3 content-box">
 
-            <div class="row">
+        <h2>Login</h2>
 
-                <div class="col-sm-4 mt7">
+        <div class="row">
 
-                    <span>Username:</span>
+            <div class="col-sm-4 mt7">
 
-                </div>
-
-                <div class="col-sm-8">
-
-                    <input id="Username" type="text" class="form-control">
-
-                </div>
+                <span>Username:</span>
 
             </div>
 
-            <div class="row">
+            <div class="col-sm-8">
 
-                <div class="col-sm-4 mt7">
-
-                    <span>Password:</span>
-
-                </div>
-                <div class="col-sm-8">
-
-                    <input id="Password" type="text" class="form-control">
-
-                </div>
+                <input id="Username" type="text" class="form-control">
 
             </div>
 
-            <div class="row">
+        </div>
 
-                <div class="col-sm-12">
+        <div class="row">
 
-                    <button id="LoginBtn" class="btn btn-default">Login</button>
+            <div class="col-sm-4 mt7">
 
-                </div>
+                <span>Password:</span>
+
+            </div>
+            <div class="col-sm-8">
+
+                <input id="Password" type="text" class="form-control">
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+
+                <button id="LoginBtn" class="btn btn-default">Login</button>
 
             </div>
 
@@ -57,7 +56,9 @@
 
     </div>
 
-</section>
+    <div class="col-sm-8"></div>
+
+</div>
 
 @section Scripts
 {

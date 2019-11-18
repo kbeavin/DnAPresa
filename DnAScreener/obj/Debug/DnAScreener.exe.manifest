@@ -235,14 +235,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DnAScreener.exe" size="7762944">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DnAScreener.exe" size="7766016">
       <assemblyIdentity name="DnAScreener" version="1.0.0.6" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ruZz2qHtWvcAnqXoFItf9O7Q9OfY8juFfxuz+xCOlSw=</dsig:DigestValue>
+        <dsig:DigestValue>Ga5r4BftFF/txTpfKcGsIikYFhakyqpTuUDO36YQi1k=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -170,6 +170,7 @@
     <Compile Include="PrintPreview.Designer.cs">
       <DependentUpon>PrintPreview.cs</DependentUpon>
     </Compile>
+    <Compile Include="Processors\DriverProcessor.cs" />
     <Compile Include="Program.cs" />
     <EmbeddedResource Include="ActiveDriver.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

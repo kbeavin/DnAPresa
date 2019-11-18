@@ -28,12 +28,12 @@ namespace DnAScreener
         /// <summary>
         /// Print button press event.
         /// </summary>
-        protected virtual void button1_Click(object sender, EventArgs e)
+        public virtual void button1_Click(object sender, EventArgs e)
         {
             if (textBoxAlchoholPerc.Text == "")
                 return;
             textBoxDriverPoolPerc_TextChanged(sender, e);
-            SetAlternates(Alternates);
+            //SetAlternates(Alternates);
             launchprintpreview();
         }
 
@@ -41,18 +41,17 @@ namespace DnAScreener
         /// Called to assign given number of Alternates to the list of selected drivers.
         /// </summary>
         /// <param name="p">Number of alternates to add</param>
-        protected virtual void SetAlternates(int p)
+        protected virtual void SetAlternates(int p, DataMgr sender)
         {
             Random myRand = new Random(System.DateTime.Now.Second * System.DateTime.Now.Millisecond);
 
             for (int i = 0; i < p; i++)
             {
-                int t = myRand.Next(myEmpTable.Rows.Count);
-                Employee myEmp = new Employee(myEmpTable.Rows[t]);
+                int t = myRand.Next(sender.empList.Rows.Count);
+                Employee myEmp = new Employee(sender.empList.Rows[t]);
                 myEmp.Substitute = true;
-                myEmpList.Add(myEmp);
-
-                myEmpTable.Rows.RemoveAt(t);
+                sender.myEmpList.Add(myEmp);
+                sender.empList.Rows.RemoveAt(t);
             }
         }
 
@@ -64,7 +63,7 @@ namespace DnAScreener
             PrintPreview myPPvw;
             myReport = new CrystalReport1();
             myReport.Load();
-            
+
             if (textBoxDriverPoolPerc.Text != "")
             {
                 DataSet myDS = new DataSet("DnAPRESA Schema");
@@ -74,7 +73,7 @@ namespace DnAScreener
                 myDS.Tables["CountData"].Columns.Add("TotalActive");
                 myDS.Tables["CountData"].Columns.Add("PoolPerc");
                 myDS.Tables["CountData"].Columns.Add("AlchPerc");
-                myDS.Tables["CountData"].Rows.Add( new object[]{this.EmpTable.Rows.Count,textBoxDriverPoolPerc.Text, textBoxAlchoholPerc.Text});
+                myDS.Tables["CountData"].Rows.Add(new object[] { this.EmpTable.Rows.Count, textBoxDriverPoolPerc.Text, textBoxAlchoholPerc.Text });
                 //myDS.WriteXml("c:\\dnadata.xml");
                 //myDS.WriteXmlSchema("c:\\dnaschema.xsd");
                 myReport.SetDataSource(myDS);
@@ -88,7 +87,7 @@ namespace DnAScreener
                 myPPvw = new PrintPreview(myReport);
                 myPPvw.ShowDialog();
             }
-            
+
             ConfirmPrompt myCP = new ConfirmPrompt();
             if (myCP.ShowDialog() == DialogResult.OK)
                 DataManager.insertHistory(myEmpList.getTable());
@@ -143,7 +142,7 @@ namespace DnAScreener
         /// </summary>
         private void textBoxAlchoholPerc_TextChanged(object sender, EventArgs e)
         {
-            if (textBoxDriverPoolPerc.Text=="")
+            if (textBoxDriverPoolPerc.Text == "")
             {
                 return;
             }
@@ -165,16 +164,18 @@ namespace DnAScreener
             labelAlchPerc.Text = ((Percent * myEmpList.Count) / 100).ToString();
 
             //Rare Case but make sure it doesn't happen
-            if (Percent >= 100) {
+            if (Percent >= 100)
+            {
                 foreach (Employee Emp in myEmpList)
                 {
                     Emp.Alcohol = false;
                 }
-                return;            
+                return;
             }
 
             //Make sure no one is in the alchohol pool before adding them
-            foreach (Employee Emp in myEmpList) {
+            foreach (Employee Emp in myEmpList)
+            {
                 Emp.Alcohol = false;
             }
 
@@ -194,9 +195,71 @@ namespace DnAScreener
         /// </summary>
         private void BaseTab_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter) {
+            if (e.KeyCode == Keys.Enter)
+            {
                 button1_Click(sender, e);
             }
         }
+
+        public EmployeeList button1_Click(DataMgr sender, EventArgs e)
+        {
+            EmployeeList myFilteredEmpList = textBoxDriverPoolPerc_TextChanged(sender, e);
+            SetAlternates(Alternates, sender);
+
+            return sender.myEmpList;
+        }
+        private EmployeeList textBoxDriverPoolPerc_TextChanged(DataMgr sender, EventArgs e)
+        {
+            
+            int Percent;
+            Percent = Convert.ToInt32(sender.DriverPoolPercentage);
+
+            Random myRand = new Random(System.DateTime.Now.Second * System.DateTime.Now.Millisecond);
+
+            DataTable newTable = EmpTable.Clone();
+            myEmpTable = EmpTable.Copy();
+
+            for (int i = 0; i < (Percent * sender.empList.Rows.Count) / 100; i++)
+            {
+                int t = myRand.Next(sender.empList.Rows.Count);
+                newTable.ImportRow(sender.empList.Rows[t]);
+                sender.empList.Rows.RemoveAt(t);
+            }
+
+
+            sender.myEmpList = new EmployeeList(newTable);
+
+            foreach (Employee Emp in sender.myEmpList)
+            {
+                Emp.Drug = true;
+            }
+
+            return textBoxAlchoholPerc_TextChanged(sender, e, sender.myEmpList);
+        }
+        private EmployeeList textBoxAlchoholPerc_TextChanged(DataMgr sender, EventArgs e, EmployeeList myFilteredEmpList)
+        {
+
+            int Percent;
+            Percent = Convert.ToInt32(sender.AlchoholPercentage);
+
+            //Make sure no one is in the alchohol pool before adding them
+            foreach (Employee Emp in myFilteredEmpList)
+            {
+                Emp.Alcohol = false;
+            }
+
+            //Assign random employees to take alchohol tests
+            Random myRand = new Random(System.DateTime.Now.Second * System.DateTime.Now.Millisecond);
+            for (int i = 0; i < (Percent * sender.myEmpList.Count) / 100; i++)
+            {
+                int t = myRand.Next(myFilteredEmpList.Count);
+                if (((Employee)myFilteredEmpList[t]).Alcohol)
+                    i--;
+                else ((Employee)myFilteredEmpList[t]).Alcohol = true;
+            }
+
+            return myFilteredEmpList;
+        }
+
     }
 }

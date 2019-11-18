@@ -17,11 +17,21 @@ namespace DnAScreener
         protected static SqlConnection myConnection = new SqlConnection();
         protected static SqlCommand myCommand;
         protected static SqlDataAdapter myAdapter;
-        private string uname, password;
+        #endregion
+
+        #region Public Members
+        public string uname, password;
+        public int TotalActiveDrivers { get; set; }
+        public int DriverPoolPercentage { get; set; }
+        public int AlchoholPercentage { get; set; }
+        public bool PrintActiveDriverList { get; set; }
+        public DataTable empList { get; set; }
+        public EmployeeList myEmpList { get; set; }
+        public string terminal { get; set; }
         #endregion
 
         #region ConnectionMethods
-        private void Connect()
+        public void Connect()
         {
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
             
@@ -34,8 +44,10 @@ namespace DnAScreener
             builder.InitialCatalog = "TMW_Live";
             builder.IntegratedSecurity = false;
             builder.PersistSecurityInfo = false;
-            builder.UserID = uname.ToUpper();
-            builder.Password = password.ToUpper();
+            builder.UserID = this.uname.ToUpper();
+            builder.Password = this.password.ToUpper();
+            //builder.UserID = uname.ToUpper();
+            //builder.Password = password.ToUpper();
             builder.IntegratedSecurity = true;
 
             if (!(myConnection.State == System.Data.ConnectionState.Closed || myConnection.State == System.Data.ConnectionState.Broken))
@@ -44,7 +56,7 @@ namespace DnAScreener
             initConnection(builder);
         }
 
-        private bool Disconnect()
+        public bool Disconnect()
         {
             try
             {
@@ -79,9 +91,24 @@ namespace DnAScreener
         {
             this.uname = uname;
             this.password = pwd;
+            terminal = string.Empty;
         }
 
-        public DataMgr() { }
+        public DataMgr(string uname, string pwd, int drivers, int pool, int alch, bool print)
+        {
+            this.uname = uname;
+            this.password = pwd;
+            this.TotalActiveDrivers = drivers;
+            this.DriverPoolPercentage = pool;
+            this.AlchoholPercentage = alch;
+            this.PrintActiveDriverList = print;
+            terminal = string.Empty;
+        }
+
+        public DataMgr()
+        {
+            terminal = string.Empty;
+        }
         #endregion
 
         #region Data Retrival Methods
@@ -98,8 +125,8 @@ namespace DnAScreener
             myCommand = new SqlCommand("SELECT mpp_ssn as SSN, EmployeeNumber as EmployeeID, ISNULL(mpp_id, '') as TMWDriverID, " +
                 "EmployeeLastName as LName, EmployeeFirstName as FNAME, LEFT(LTRIM(EmployeeMiddleName), 1) as MI, Tier3 as EmplClass, " +
                 "'CEXPL' as DB FROM [naus03sql2].CarterProd.dbo.tbl_DNA_CurrentEmployees ce " +
-                "LEFT OUTER JOIN [NAUS03TMW1].TMW_Live.dbo.manpowerprofile mpp ON (mpp.mpp_id=ce.EmployeeNumber OR mpp.mpp_otherid=ce.EmployeeNumber)" + Environment.NewLine +
-                Criteria, myConnection);
+                "LEFT OUTER JOIN [NAUS03TMW1].TMW_Live.dbo.manpowerprofile mpp ON (mpp.mpp_id=ce.EmployeeNumber OR mpp.mpp_otherid=ce.EmployeeNumber)" +
+                terminal + Environment.NewLine + Criteria, myConnection);
             myAdapter = new SqlDataAdapter();
             myAdapter.SelectCommand = myCommand;
             myAdapter.Fill(myData);
@@ -136,7 +163,8 @@ namespace DnAScreener
 
         public DataTable getCantons()
         {
-            return getUnspecified(" WHERE Tier4 = 'Cantons'");
+            terminal = "inner join TMW_Live.dbo.labelfile lf on mpp_terminal = lf.abbr and lf.labeldefinition = 'terminal'";
+            return getUnspecified(" WHERE lf.abbr = 'CW'");
         }
 
         /// <summary>

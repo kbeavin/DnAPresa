@@ -37,7 +37,7 @@ namespace DnAScreener
             //catch { this.label4.Visible = true; }
         }
 
-        protected override void button1_Click(object sender, EventArgs e)
+        public override void button1_Click(object sender, EventArgs e)
         {
             if (checkBoxPrintDriverList.Checked) {
                 ActiveDriver DriverRpt = new ActiveDriver();
