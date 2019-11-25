@@ -103,7 +103,7 @@ namespace DnAPresa.UI.Controllers
             }
             catch (Exception ex)
             {
-
+                return Json(new{PartialView = ex});
             }
 
             return json;

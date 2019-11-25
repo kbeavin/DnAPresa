@@ -1,7 +1,3 @@
-C:\Users\kbeavin\source\repos\DnAPresa\DnAScreener\bin\Debug\DnAScreener.exe.config
-C:\Users\kbeavin\source\repos\DnAPresa\DnAScreener\bin\Debug\DnAScreener.exe.manifest
-C:\Users\kbeavin\source\repos\DnAPresa\DnAScreener\bin\Debug\DnAScreener.application
-C:\Users\kbeavin\source\repos\DnAPresa\DnAScreener\bin\Debug\DnAScreener.exe
 C:\Users\kbeavin\source\repos\DnAPresa\DnAScreener\bin\Debug\DnAScreener.pdb
 C:\Users\kbeavin\source\repos\DnAPresa\DnAScreener\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
 C:\Users\kbeavin\source\repos\DnAPresa\DnAScreener\bin\Debug\CrystalDecisions.ReportSource.dll
@@ -43,10 +39,8 @@ C:\Users\kbeavin\source\repos\DnAPresa\DnAScreener\obj\Debug\DnAScreener.PrintPr
 C:\Users\kbeavin\source\repos\DnAPresa\DnAScreener\obj\Debug\DnAScreener.Properties.Resources.resources
 C:\Users\kbeavin\source\repos\DnAPresa\DnAScreener\obj\Debug\DnAScreener.BaseTab.resources
 C:\Users\kbeavin\source\repos\DnAPresa\DnAScreener\obj\Debug\DnA Presa.csproj.GenerateResource.cache
-C:\Users\kbeavin\source\repos\DnAPresa\DnAScreener\obj\Debug\DnAScreener.TrustInfo.xml
-C:\Users\kbeavin\source\repos\DnAPresa\DnAScreener\obj\Debug\DnAScreener.exe.manifest
-C:\Users\kbeavin\source\repos\DnAPresa\DnAScreener\obj\Debug\DnAScreener.application
 C:\Users\kbeavin\source\repos\DnAPresa\DnAScreener\obj\Debug\DnA Presa.csproj.CopyComplete
-C:\Users\kbeavin\source\repos\DnAPresa\DnAScreener\obj\Debug\DnAScreener.exe
 C:\Users\kbeavin\source\repos\DnAPresa\DnAScreener\obj\Debug\DnAScreener.pdb
-C:\Users\kbeavin\source\repos\DnAPresa\DnAScreener\obj\Debug\DnA Presa.csprojAssemblyReference.cache
+C:\Users\kbeavin\source\repos\DnAPresa\DnAScreener\bin\Debug\DnAScreener.dll.config
+C:\Users\kbeavin\source\repos\DnAPresa\DnAScreener\bin\Debug\DnAScreener.dll
+C:\Users\kbeavin\source\repos\DnAPresa\DnAScreener\obj\Debug\DnAScreener.dll

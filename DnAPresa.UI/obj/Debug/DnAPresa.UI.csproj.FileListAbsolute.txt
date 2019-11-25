@@ -48,7 +48,6 @@ C:\Users\kbeavin\source\repos\DnAPresa\DnAPresa.UI\bin\roslyn\vbc.rsp
 C:\Users\kbeavin\source\repos\DnAPresa\DnAPresa.UI\bin\roslyn\VBCSCompiler.exe
 C:\Users\kbeavin\source\repos\DnAPresa\DnAPresa.UI\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\kbeavin\source\repos\DnAPresa\DnAPresa.UI\bin\Antlr3.Runtime.dll
-C:\Users\kbeavin\source\repos\DnAPresa\DnAPresa.UI\bin\DnAScreener.exe
 C:\Users\kbeavin\source\repos\DnAPresa\DnAPresa.UI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\kbeavin\source\repos\DnAPresa\DnAPresa.UI\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\kbeavin\source\repos\DnAPresa\DnAPresa.UI\bin\Newtonsoft.Json.dll
@@ -80,7 +79,6 @@ C:\Users\kbeavin\source\repos\DnAPresa\DnAPresa.UI\bin\CrystalDecisions.ReportAp
 C:\Users\kbeavin\source\repos\DnAPresa\DnAPresa.UI\bin\stdole.dll
 C:\Users\kbeavin\source\repos\DnAPresa\DnAPresa.UI\bin\ShockwaveFlashObjects.dll
 C:\Users\kbeavin\source\repos\DnAPresa\DnAPresa.UI\bin\DnAScreener.pdb
-C:\Users\kbeavin\source\repos\DnAPresa\DnAPresa.UI\bin\DnAScreener.exe.config
 C:\Users\kbeavin\source\repos\DnAPresa\DnAPresa.UI\bin\System.Web.Helpers.xml
 C:\Users\kbeavin\source\repos\DnAPresa\DnAPresa.UI\bin\System.Web.Mvc.xml
 C:\Users\kbeavin\source\repos\DnAPresa\DnAPresa.UI\bin\System.Web.Optimization.xml
@@ -95,3 +93,5 @@ C:\Users\kbeavin\source\repos\DnAPresa\DnAPresa.UI\obj\Debug\DnAPresa.UI.csprojA
 C:\Users\kbeavin\source\repos\DnAPresa\DnAPresa.UI\obj\Debug\DnAPresa.UI.csproj.CopyComplete
 C:\Users\kbeavin\source\repos\DnAPresa\DnAPresa.UI\obj\Debug\DnAPresa.UI.dll
 C:\Users\kbeavin\source\repos\DnAPresa\DnAPresa.UI\obj\Debug\DnAPresa.UI.pdb
+C:\Users\kbeavin\source\repos\DnAPresa\DnAPresa.UI\bin\DnAScreener.dll
+C:\Users\kbeavin\source\repos\DnAPresa\DnAPresa.UI\bin\DnAScreener.dll.config
